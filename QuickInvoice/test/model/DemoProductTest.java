@@ -2,13 +2,33 @@ package model;
 
 import static org.junit.Assert.*;
 
+import javax.persistence.EntityManager;
+
+import mytools.DBUtil;
+
 import org.junit.Test;
+import model.DemoProductInfo;
 
 public class DemoProductTest {
 
 	@Test
 	public void testDemoProductInfo() {
 		fail("Not yet implemented");
+		
+		EntityManager em = DBUtil.getEmFactory().createEntityManager();
+		try {
+			DemoProductInfo products = em.find(DemoProductInfo.class, (long)1);
+		//	assertEquals(products., "Rakshit");
+			}
+			catch(Exception e)
+			{
+				fail(e.getMessage());
+			} finally
+			{
+				em.close();
+				
+			}
+		
 	}
 
 	@Test
