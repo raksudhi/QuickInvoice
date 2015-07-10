@@ -13,16 +13,17 @@ public class DemoProductTest {
 
 	@Test
 	public void testDemoProductInfo() {
-		fail("Not yet implemented");
+		//
 		
 		EntityManager em = DBUtil.getEmFactory().createEntityManager();
 		try {
-			DemoProductInfo products = em.find(DemoProductInfo.class, (long)1);
-		//	assertEquals(products., "Rakshit");
+			String products = em.find(DemoProductInfo.class, (long)9).getProductName();
+			equals("Mens Shoes");
 			}
 			catch(Exception e)
 			{
 				fail(e.getMessage());
+				fail("Not yet implemented");
 			} finally
 			{
 				em.close();
@@ -31,11 +32,11 @@ public class DemoProductTest {
 		
 	}
 
-	@Test
-	public void testGetProductId() {
-		fail("Not yet implemented");
-	}
-
+//	@Test
+//	public void testGetProductId() {
+	//	fail("Not yet implemented");
+	//}
+	/*
 	@Test
 	public void testSetProductId() {
 		fail("Not yet implemented");
@@ -150,5 +151,8 @@ public class DemoProductTest {
 	public void testRemoveDemoOrderItem() {
 		fail("Not yet implemented");
 	}
-
+*/
+	
+	
+	
 }
